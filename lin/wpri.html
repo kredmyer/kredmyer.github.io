@@ -10,19 +10,6 @@
 <meta name="twitter:app:url:iphone" content="wpri://">
 </head>
 <script type="text/javascript">
-    function isMobile() {
-        var agents = ['iphone', 'ipad', 'iPod', 'iPhone', 'iPad'];  // You could definitely add other agents here
-                                                                    // but these are all I care about.
-        var ismobile=false;
-        for(i in agents) {
-            if (navigator.userAgent.split(agents[i]).length>1) {
-                ismobile = true;
-            }
-        }
-        return ismobile;
-    }
-
-    
     var redirect = function (location) {
         var iframe = document.createElement('iframe');
         iframe.setAttribute('src', location);
@@ -39,10 +26,8 @@
     setTimeout(function () {
         redirect('https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8');
     }, 25);
-    
-    if (isMobile()) {
-        redirect('wpri://');
-    }
+           
+    redirect('wpri://');
 </script>
 <body>Redirecting...</body>
 </html>
