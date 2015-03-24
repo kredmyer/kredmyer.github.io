@@ -9,12 +9,13 @@
 <meta name="twitter:app:id:iphone" content="488539287">
 <meta name="twitter:app:url:iphone" content="wpri://">
 </head>
-<script>
-    var now = new Date().valueOf();
-    setTimeout(function () {
-        if (new Date().valueOf() - now > 2000) return;
-            window.location = "https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8";
-        }, 25);
+<script type="text/javascript">
+    setTimeout(function() {
+        window.location = "https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8";
+    }, 25);
+    // If "custom-uri://" is registered the app will launch immediately and your
+    // timer won't fire. If it's not set, you'll get an ugly "Cannot Open Page"
+    // dialogue prior to the App Store application launching
     window.location = "wpri://";
 </script>
 <body>Redirecting...</body>
