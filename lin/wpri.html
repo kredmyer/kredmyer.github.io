@@ -9,29 +9,13 @@
 <meta name="twitter:app:id:iphone" content="488539287">
 <meta name="twitter:app:url:iphone" content="wpri://">
 </head>
-<script src='//code.jquery.com/jquery-1.11.2.min.js'></script>
-<script src='//mobileesp.googlecode.com/svn/JavaScript/mdetect.js'></script>
 <script>
-    (function ($, MobileEsp) {
-        // On document ready, redirect to the App on the App store.
-        $(function () {
-            if (typeof MobileEsp.DetectIos !== 'undefined' && MobileEsp.DetectIos()) {
-                // Add an iframe to twitter://, and then an iframe for the app store
-                // link. If the first fails to redirect to the Twitter app, the
-                // second will redirect to the app on the App Store. We use jQuery
-                // to add this after the document is fully loaded, so if the user
-                // comes back to the browser, they see the content they expect.
-                $('body').append('<iframe class="twitter-detect" src="wpri://" />')
-                .append('<iframe class="twitter-detect" src="https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8" />');
-            }
-        });
-    })(jQuery, MobileEsp);
+    var now = new Date().valueOf();
+    setTimeout(function () {
+        if (new Date().valueOf() - now > 2000) return;
+            window.location = "https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8";
+        }, 25);
+    window.location = "wpri://";
 </script>
-<style type="text/css">
-    .twitter-detect {
-        display: none;
-    }
-</style>
 <body>Redirecting...</body>
 </html>
-
