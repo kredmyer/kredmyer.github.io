@@ -10,7 +10,12 @@
 <meta name="twitter:app:url:iphone" content="wpri://">
 </head>
 <script type="text/javascript">
-    var uagent = navigator.userAgent.toLowerCase();
+    var isMobile = {
+        // Maybe add more device IDs later?
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+    };
     
     var redirect = function (location) {
         var iframe = document.createElement('iframe');
@@ -28,7 +33,7 @@
     setTimeout(function () {
         redirect('https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8');
     }, 25);
-    if (uagent.search("iphone") > -1 || uagent.search("ipad") > -1) {
+    if (isMobile.iOS()) {
         redirect('wpri://');
     }
 </script>
