@@ -9,21 +9,25 @@
 <meta name="twitter:app:id:iphone" content="488539287">
 <meta name="twitter:app:url:iphone" content="wpri://">
 </head>
-<script>
-    (function() {
-        var app = {
-            launchApp: function() {
-                window.location.replace("wpri://");
-                this.timer = setTimeout(this.openWebApp, 1000);
-            },
-     
-            openWebApp: function() {
-                window.location.replace("https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8");
-            }
-        };
-     
-        app.launchApp();
-    })();
+<script type="text/javascript">
+    var redirect = function (location) {
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', location);
+        iframe.setAttribute('width', '1px');
+        iframe.setAttribute('height', '1px');
+        iframe.setAttribute('position', 'absolute');
+        iframe.setAttribute('top', '0');
+        iframe.setAttribute('left', '0');
+        document.documentElement.appendChild(iframe);
+        iframe.parentNode.removeChild(iframe);
+        iframe = null;
+    };
+
+    setTimeout(function () {
+        redirect('https://itunes.apple.com/us/app/wpri-12-eyewitness-news-providence/id488539287?mt=8');
+    }, 25);
+           
+    redirect('wpri://');
 </script>
 <body>Redirecting...</body>
 </html>
